@@ -113,6 +113,6 @@ head(gapminder_67_07)
 write.csv(file = "data/gapminder_52_97.csv", gapminder_52_97, row.names = FALSE, quote = FALSE)
 write.csv(file = "data/gapminder_67_07.csv", gapminder_67_07, row.names = FALSE, quote = FALSE)
 
-
+x
 
 
