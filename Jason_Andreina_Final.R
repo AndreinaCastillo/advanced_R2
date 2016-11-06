@@ -15,8 +15,26 @@ country_select <- function(countries){
   }
 }
 
-countries <- c("Norway","Japan","Germany")
+countries <- c("Norway","Japan","Chad")
 
 country_select(countries)
 
+# Stats, mean min max of LifExp for each continent 
+#print( levels(dat$continent))
+#print(head(funsies))
+funsies <- levels(dat$continent)
+continent_LifeExp <- function(funsies){
+  for(f in funsies){
+    continent_subset <- subset(dat, dat$continent == f)
+    out<-c("Mean_is" = mean(continent_subset$lifeExp),
+           "Max_is" = max(continent_subset$lifeExp),
+           "Min_is" = min(continent_subset$lifeExp))
+    
+    print(f)
+    print(out)
+  }
+ 
+}
+
+continent_LifeExp(funsies)
 

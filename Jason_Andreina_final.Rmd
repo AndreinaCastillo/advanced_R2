@@ -1,0 +1,84 @@
+---
+title: "R_Final"
+author: "Jason_Andreina"
+date: "November 6, 2016"
+output: html_document
+---
+
+<!-- ```{r setup, include=FALSE} -->
+<!-- knitr::opts_chunk$set(echo = TRUE) -->
+<!-- ``` -->
+
+<!-- ## R Markdown -->
+<!-- hello!!!!!!!! -->
+<!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
+
+<!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: -->
+
+<!-- ```{r cars} -->
+<!-- summary(cars) -->
+<!-- ``` -->
+
+<!-- ## Including Plots -->
+
+<!-- You can also embed plots, for example: -->
+
+<!-- ```{r dat, echo=FALSE} -->
+<!-- plot(pressure) -->
+<!-- ``` -->
+
+<!-- Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. -->
+
+
+
+```{r final, echo=FALSE}
+#Load file and select data for three countries (Guam, Norway, Germany)
+
+dat <- read.csv("data/gapminder.csv",header=TRUE)
+#head(dat)
+#summary(dat)
+#str(dat) #Str ==> structure NOT string
+
+#Plots year vs.GDP
+
+country_select <- function(countries){
+  for (countr in countries){
+    country_subset <- subset(dat, dat$country == countr)
+    #print(country_subset)
+    plot(country_subset$year,country_subset$gdpPercap,ylab = "GDP", xlab= "Year", main= countr)
+  }
+}
+
+countries <- c("Norway","Japan","Chad")
+
+country_select(countries)
+
+
+
+```
+
+
+
+They look the same cause they all make da monies. Except Chad, nobody likes Chad, and they have no oil.
+
+
+```{r final2}
+funsies <- levels(dat$continent)
+continent_LifeExp <- function(funsies){
+  for(f in funsies){
+    continent_subset <- subset(dat, dat$continent == f)
+    out<-c("Mean_is" = mean(continent_subset$lifeExp),
+           "Max_is" = max(continent_subset$lifeExp),
+           "Min_is" = min(continent_subset$lifeExp))
+    
+    print(f)
+    print(out)
+  }
+ 
+}
+
+continent_LifeExp(funsies)
+```
+
+
+This further supports the hypothesis that nobody likes Chad.
