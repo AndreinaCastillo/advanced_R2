@@ -66,10 +66,17 @@ analyze <- function(countr){
   country_life <- (country_name$lifeExp)
   country_year <- (country_name$year)
   
-  out_plot <- plot(country_year,country_life)  
+  out_plot <- plot(country_year,country_life,ylab = "Life expectancy", xlab= "Year", main= countr)  
   print(out_plot)
 }
 
-analyze("Uganda")
+analyze("Uganda") #colera epidemic
+analyze("Somalia")  #genocide
+analyze("Venezuela")
+analyze("Uruguay")
+analyze("Italy")
+analyze("Germany")
+analyze("Serbia")
+
 
 
