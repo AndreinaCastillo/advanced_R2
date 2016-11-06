@@ -78,5 +78,41 @@ analyze("Italy")
 analyze("Germany")
 analyze("Serbia")
 
+#Modify the function to loop over several countries
+#For loop
+
+best_practices <- c('write','programms','for','people','not','computers')
+
+
+for(n in best_practices){
+  print(n)
+}
+
+best_practices_fun2 = function(best_practices){
+  for(n in best_practices){
+    print(n)
+  }
+}
+
+best_practices_fun2(best_practices)
+
+
+#Generate a file called gapminder_52_97 that contains years "1952" and "1997", and another file called
+#gapminder_67_07 that contains years "1967" and "2007". Hint: use subset
+#subset(dat, dat$country = "Uganda")
+
+gapminder_52_97 <- subset(dat, dat$year == 1952 | dat$year == 1997)
+head(gapminder_52_97)
+
+gapminder_67_07 <- subset(dat, dat$year == 1967 | dat$year == 2007)
+head(gapminder_67_07)
+
+
+#Writing the dataset
+
+write.csv(file = "data/gapminder_52_97.csv", gapminder_52_97, row.names = FALSE, quote = FALSE)
+write.csv(file = "data/gapminder_67_07.csv", gapminder_67_07, row.names = FALSE, quote = FALSE)
+
+
 
 
