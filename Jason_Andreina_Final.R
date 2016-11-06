@@ -36,5 +36,7 @@ continent_LifeExp <- function(funsies){
  
 }
 
-continent_LifeExp(funsies)
+continent_LifeExp(funsies) #funsies = continent names
+
+#make histograms of global lifExp
 

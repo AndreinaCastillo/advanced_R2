@@ -82,3 +82,15 @@ continent_LifeExp(funsies)
 
 
 This further supports the hypothesis that nobody likes Chad.
+
+```{r final3}
+#make histograms of global lifExp
+
+hist(dat$lifeExp, xlab = "Life Expectancies", main ="Histogram of life Expectancies (including Chad)")
+
+hist(dat$lifeExp, xlab = "Life Expectancies", 
+     main ="Histogram of life Expectancies (including Chad)", breaks = 50)
+
+```
+
+Increase in deaths after 70y (likely not in Chat)
