@@ -45,7 +45,10 @@ analyze <- function(countr){
   #print(min(country_name$lifeExp))
   #print(max(country_name$lifeExp))
   
-  out <- c("Mean_is" = mean(country_name[,5]), "Min_is" = min(country_name[,5]), "Max_is" = max(country_name[,5]))
+  out <- c("Mean_is" = mean(country_name[,5]), 
+           "Min_is" = min(country_name[,5]), 
+           "Max_is" = max(country_name[,5])
+           )
   print(out)
 }
 
@@ -53,3 +56,20 @@ analyze("Uganda")
 analyze("Venezuela")
 analyze("Uruguay")
 analyze("Italy")
+
+#Exercise
+#Modify the analyze function to generate a plot with Year on x-axis and lifeexp on the y-axis
+
+#alternatively you can code it like this
+analyze <- function(countr){
+  country_name <- subset(dat, dat$country == countr)
+  country_life <- (country_name$lifeExp)
+  country_year <- (country_name$year)
+  
+  out_plot <- plot(country_year,country_life)  
+  print(out_plot)
+}
+
+analyze("Uganda")
+
+
