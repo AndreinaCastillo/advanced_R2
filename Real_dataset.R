@@ -41,12 +41,15 @@ analyze("Uganda")
 #alternatively you can code it like this
 analyze <- function(countr){
   country_name <- subset(dat, dat$country == countr)
-  print(mean(country_name$lifeExp))
-  print(min(country_name$lifeExp))
-  print(max(country_name$lifeExp))
+  #print(mean(country_name$lifeExp))
+  #print(min(country_name$lifeExp))
+  #print(max(country_name$lifeExp))
   
   out <- c("Mean_is" = mean(country_name[,5]), "Min_is" = min(country_name[,5]), "Max_is" = max(country_name[,5]))
   print(out)
 }
 
 analyze("Uganda")
+analyze("Venezuela")
+analyze("Uruguay")
+analyze("Italy")
