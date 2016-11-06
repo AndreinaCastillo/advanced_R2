@@ -24,3 +24,7 @@ fah_to_celsius <- function(temp){
 
 fah_to_celsius(temp=52)
 
+#It is a better practice to commit files and frames and all independently and by small
+#degrees. Otherwise i might be confusing for your future self. :p
+
+
